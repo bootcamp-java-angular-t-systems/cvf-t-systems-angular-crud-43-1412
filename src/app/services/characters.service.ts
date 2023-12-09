@@ -19,5 +19,9 @@ export class CharactersService {
     return this.http.get<any[]>(`${this.url}?name=${name}`);
   }
 
+  getCharacterById(name: string) : Observable<any> {
+    return this.http.get<any[]>(`${this.url}${name}`);
+  }
+
   
 }

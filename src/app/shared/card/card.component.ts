@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,5 +10,12 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() character: any;
+
+  constructor(private router: Router) { }
+
+  seeMore() {
+    const characterId = this.character.id;
+    this.router.navigate(['/character/', characterId]);
+  }
 
 }

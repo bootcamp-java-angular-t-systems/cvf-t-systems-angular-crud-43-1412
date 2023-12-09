@@ -1,0 +1,14 @@
+<div class="card mt-4 d-flex flex-row" style="">
+    <img src="{{ character.image }}" class="card-img-top character-image" alt="{{ character.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ character.name }}</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Status: {{ character.status }}</li>
+        <li class="list-group-item">Species: {{ character.species }}</li>
+        <li class="list-group-item">Gender: {{ character.gender }}</li>
+        <li class="list-group-item">Origin: {{ character.origin.name }}</li>
+        <li class="list-group-item">Location: {{ character.location.name }}</li>
+      </ul>
+      <a (click)="returnToList()" class="btn btn-warning mt-4 w-100">Return</a>
+    </div>
+</div>
