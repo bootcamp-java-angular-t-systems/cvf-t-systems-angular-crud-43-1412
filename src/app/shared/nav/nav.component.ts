@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterModule],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
 
+export class NavComponent {
+  @ViewChild('name') name!: ElementRef;
+  
+  constructor(private router: Router) {}
+
+  search() {
+      this.router.navigate(['/search/', this.name.nativeElement.value]);
+  }
 }
