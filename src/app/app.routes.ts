@@ -10,6 +10,10 @@ export const routes: Routes = [
         component: CharacterListComponent
     },
     {
+        path: 'characters/:name',
+        component: CharacterListComponent
+    },
+    {
         path: 'character/:id',
         component: CharacterDetailComponent
     },
