@@ -1,1 +1,6 @@
-<p>character-list works!</p>
+<div class="d-flex flex-wrap gap-5 justify-content-center">
+    @for (character of characters; track $index) {
+        <app-card [character]="character"></app-card>
+    }
+</div>
+
