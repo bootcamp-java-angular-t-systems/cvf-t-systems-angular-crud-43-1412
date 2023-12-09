@@ -1,8 +1,8 @@
-<div class="card mt-4 d-flex flex-row">
-    <img src="{{ character.image }}" class="card-img-top character-image" alt="{{ character.name }}">
-    <div class="card-body">
+<div class="card mt-4 d-flex flex-row p-3 p-md-5 m-4" style="width: 50rem;">
+    <img src="{{ character.image }}" class="card-img-top me-3" alt="{{ character.name }}" style="object-fit: contain;">
+    <div class="card-body w-75">
       <h5 class="card-title">{{ character.name }}</h5>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush mt-3">
         <li class="list-group-item">Status: {{ character.status }}</li>
         <li class="list-group-item">Species: {{ character.species }}</li>
         <li class="list-group-item">Gender: {{ character.gender }}</li>
