@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable  } from 'rxjs';
+import { map, toArray   } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +13,22 @@ export class CharactersService {
   constructor(private http: HttpClient) { }
 
   getAllCharacters() {
-    return this.http.get<any[]>(this.url)
-      .pipe(
-        map((response:any) => {
-          const characters = response.results;
-          const charactersLength = characters.info.count;
-          const randomIndices = this.getRandomIndices(charactersLength);
-          const randomCharacters = randomIndices.map(index => characters[index]);
-          response.results = randomCharacters;
-          return response;
-        })
-      );
+    const randomIndices = this.getRandomIndices();
+    const newUrl = `https://rickandmortyapi.com/api/character/${randomIndices.join(',')}`;
+    return this.http.get<any[]>(newUrl);
   }
+  
+  private getRandomIndices(): number[] {
+    const listLength = 20;
+    const totalCharacters = 826;
+    const randomIndices: number[] = [];
 
-  private getRandomIndices(length: number): number[] {
-    const randomIndices:any[] = [];
-    while (randomIndices.length < length) {
-      const randomIndex = Math.floor(Math.random() * length);
+    while (randomIndices.length < listLength) {
+      const randomIndex = Math.floor(Math.random() * totalCharacters);
       if (!randomIndices.includes(randomIndex)) {
         randomIndices.push(randomIndex);
       }
-    }
+    } 
     return randomIndices;
   }
 
@@ -41,9 +36,8 @@ export class CharactersService {
     return this.http.get<any[]>(`${this.url}?name=${name}`);
   }
 
-  getCharacterById(name: string) : Observable<any> {
+  getCharacterById(name: number) : Observable<any> {
     return this.http.get<any[]>(`${this.url}${name}`);
   }
 
-  
 }

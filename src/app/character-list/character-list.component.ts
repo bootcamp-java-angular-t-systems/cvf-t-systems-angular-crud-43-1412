@@ -30,7 +30,7 @@ export class CharacterListComponent {
       this.search();
     } else {
       this.charactersService.getAllCharacters().subscribe((data: any) => {
-          this.characters = data.results;
+          this.characters = data;
       });
     }
   }
