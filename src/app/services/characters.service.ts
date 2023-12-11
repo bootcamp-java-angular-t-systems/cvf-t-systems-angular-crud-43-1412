@@ -17,7 +17,7 @@ export class CharactersService {
       .pipe(
         map((response:any) => {
           const characters = response.results;
-          const charactersLength = characters.length;
+          const charactersLength = characters.info.count;
           const randomIndices = this.getRandomIndices(charactersLength);
           const randomCharacters = randomIndices.map(index => characters[index]);
           response.results = randomCharacters;
