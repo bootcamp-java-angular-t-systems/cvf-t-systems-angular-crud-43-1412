@@ -7,7 +7,7 @@ import { Observable  } from 'rxjs';
 })
 export class CharactersService {
 
-  private url = "https://cvf-t-systems-backend-43-1412-production.up.railway.app/characters";
+  private url = "https://cvf-t-systems-backend-43-1412-production.up.railway.app/characters/";
 
   constructor(private http: HttpClient) { }
 
