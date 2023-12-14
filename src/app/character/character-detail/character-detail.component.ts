@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CardDetailComponent } from '../shared/card-detail/card-detail.component';
+import { CardDetailComponent } from '../../shared/card-detail/card-detail.component';
 import { ActivatedRoute } from '@angular/router';
-import { CharactersService } from '../services/characters.service';
+import { CharactersService } from '../../services/characters.service';
 
 @Component({
   selector: 'app-character-detail',

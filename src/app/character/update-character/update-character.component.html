@@ -1,0 +1,42 @@
+<h1>Update character</h1>
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" name="name" class="form-control" formControlName="name" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <input type="text" id="status" name="status" class="form-control" formControlName="status" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="species" class="form-label">Species:</label>
+      <input type="text" id="species" name="species" class="form-control" formControlName="species" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender:</label>
+      <input type="text" id="gender" name="gender" class="form-control" formControlName="gender" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="origin" class="form-label">Origin:</label>
+      <input type="text" id="origin" name="origin" class="form-control" formControlName="origin" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="location" class="form-label">Location:</label>
+      <input type="text" id="location" name="location" class="form-control" formControlName="location" required>
+    </div>
+  
+    <div class="mb-3">
+      <label for="image" class="form-label">Image:</label>
+      <input type="text" id="image" name="image" class="form-control" formControlName="image" required>
+    </div>
+  
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!myForm.valid">Save changes</button>
+</form>
+  

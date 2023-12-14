@@ -6,9 +6,11 @@
         <li class="list-group-item">Status: {{ character.status | capitalizeFirstLetter }}</li>
         <li class="list-group-item">Species: {{ character.species | capitalizeFirstLetter }}</li>
         <li class="list-group-item">Gender: {{ character.gender | capitalizeFirstLetter }}</li>
-        <li class="list-group-item">Origin: {{ character.origin.name | capitalizeFirstLetter }}</li>
-        <li class="list-group-item">Location: {{ character.location.name| capitalizeFirstLetter  }}</li>
+        <li class="list-group-item">Origin: {{ character.origin | capitalizeFirstLetter }}</li>
+        <li class="list-group-item">Location: {{ character.location| capitalizeFirstLetter  }}</li>
       </ul>
-      <a (click)="returnToList()" class="btn btn-warning mt-4 w-100">Return</a>
+      <a (click)="returnToList()" class="btn btn-warning mt-2 w-100">Return</a>
+      <a (click)="updateCharacter()" class="btn btn-primary mt-2 w-100">Update</a>
+      <a (click)="deleteCharacter()" class="btn btn-danger mt-2 w-100">Delete</a>
     </div>
 </div>

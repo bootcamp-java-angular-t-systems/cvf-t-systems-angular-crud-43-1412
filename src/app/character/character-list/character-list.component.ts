@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CharactersService } from '../services/characters.service';
-import { CardComponent } from '../shared/card/card.component';
+import { CharactersService } from '../../services/characters.service';
+import { CardComponent } from '../../shared/card/card.component';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 
 @Component({
